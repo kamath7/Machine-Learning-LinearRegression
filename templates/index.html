@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+
+    </style>
+    <title>Simple Salary Predictor</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a
+        class="navbar-brand"
+        href="/"
+        style="font-family: 'Roboto Condensed', sans-serif; font-size: 40px"
+      >
+        Salary Predictor
+      </a>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <form action="{{ url_for('predict') }}" method="post">
+          <div class="form-group">
+            <label
+              for="experience"
+              style="
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 27px;
+              "
+              >Enter Years of Experience</label
+            >
+            <input
+              type="text"
+              name="experience"
+              class="form-control"
+              placeholder="6.9"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Get Salary</button>
+        </form>
+
+        <br />
+        <br />
+
+        <p style="font-family: 'Bangers', cursive; font-size: 31px;">{{ prediction }}</p>
+      </div>
+    </div>
+  </body>
+</html>
